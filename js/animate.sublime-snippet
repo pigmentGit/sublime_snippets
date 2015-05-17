@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[		
+\$('.hideH4-wrap h2').click(function (){
+    \$(this).next('.inforuta').animate({
+      opacity: 0.25,
+      left: "+=50",
+      height: "toggle"
+    }, 1000, function() {
+      // Animation complete.
+    }); 
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>animate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+	<!-- Optional: Description to show in the menu -->
+	<description>pi animate</description>
+</snippet>
