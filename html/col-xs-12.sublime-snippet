@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+<div class="col-xs-12">
+	<?php the_content();?>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>c12</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html - source.php</scope>
+	<!-- Optional: Description to show in the menu -->
+	<description>pi col-xs-12</description>
+</snippet>
