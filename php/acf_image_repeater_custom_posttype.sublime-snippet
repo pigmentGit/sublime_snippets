@@ -1,0 +1,61 @@
+<snippet>
+	<content><![CDATA[
+<div class="SLIDER_CLASS">
+	<?php 
+		\$args = array( 'post_type' => 'POSTYPE_HERE', 'posts_per_page' => 20 );
+		\$loop = new WP_Query( \$args );
+		while ( \$loop->have_posts() ) : \$loop->the_post();
+	?>
+	<?php 
+		if( have_rows('REPEATER_FIELD_HERE') ):
+			\$image = get_field('THE_SUB_FIELD_HERE' ); 
+	
+			// vars
+			\$url = \$image['url'];
+			\$title = \$image['title'];
+			\$alt = \$image['alt'];
+			\$caption = \$image['caption'];
+
+			// checks if is mobile
+			if ( wp_is_mobile() ) {
+				\$size = 'liten_bild';
+			}
+			else {
+				\$size = 'stor_bild';
+			}
+		
+			// thumbnail
+			\$size = 'Portfolio_stor_bild';
+			\$thumb = \$image['sizes'][ \$size ];
+			\$width = \$image['sizes'][ \$size . '-width' ];
+			\$height = \$image['sizes'][ \$size . '-height' ];
+	?>
+	<div>
+		<a href="<?php echo \$url; ?>" title="<?php echo \$title; ?>">
+			<img src="<?php echo \$thumb; ?>" alt="<?php echo \$alt; ?>" width="<?php echo \$width; ?>" height="<?php echo \$height; ?>" />
+		</a>
+		<p class="wp-caption-text"><?php echo \$url; ?></p>
+		<p class="wp-caption-text"><?php echo \$atitlelt; ?></p>
+		<p class="wp-caption-text"><?php echo \$alt; ?></p>
+		<p class="wp-caption-text"><?php echo \$caption; ?></p>
+		<p class="wp-caption-text"><?php echo \$size; ?></p>
+		<p class="wp-caption-text"><?php echo \$thumb; ?></p>
+		<p class="wp-caption-text"><?php echo \$width; ?></p>
+		<p class="wp-caption-text"><?php echo \$height; ?></p>
+	</div>
+		
+	<?php endif; ?>
+	
+	<?php
+		endwhile;
+		wp_reset_query();
+	?>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>acfimage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<!-- Optional: Description to show in the menu -->
+	<description>pi acf_repeater_img_cu_post</description>
+</snippet>

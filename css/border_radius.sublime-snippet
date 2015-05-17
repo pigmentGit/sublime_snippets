@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+-webkit-border-radius: 2px 2px 2px 2px; 
+-moz-border-radius: 2px 2px 2px 2px; 
+border-radius: 2px 2px 2px 2px; 
+]]></content>
+<!-- Optional: Tab trigger to activate the snippet -->
+<tabTrigger>Border</tabTrigger>
+<!-- Optional: Scope the tab trigger will be active in -->
+<scope>source.css</scope>
+<!-- Optional: Description to show in the menu -->
+<description>pi Border-radius</description>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+-moz-box-shadow:    0 0 10px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+box-shadow:         0 0 10px rgba(0,0,0,0.5);
+]]></content>
+<!-- Optional: Tab trigger to activate the snippet -->
+<tabTrigger>Box-shadow</tabTrigger>
+<!-- Optional: Scope the tab trigger will be active in -->
+<scope>source.css</scope>
+<!-- Optional: Description to show in the menu -->
+<description>pi Box-shadow</description>
+</snippet>
