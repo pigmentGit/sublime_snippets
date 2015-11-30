@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+<div class="SLIDERCLASS">
+	<?php 
+		// checks the postype
+		\$args = array( 'post_type' => 'CUSTOM_POST_TYPE', 'posts_per_page' => 6 );
+		\$loop = new WP_Query( \$args );
+		while ( \$loop->have_posts() ) : \$loop->the_post();
+	?>
+	<?php 
+		// checks the acf repeater
+		if( have_rows('REPEATER_FIELD') ) : {
+			\$rows = get_field('THE_FIELD' ); 
+			\$first_row = \$rows[0]; // get the first row
+			\$first_row_image = \$first_row['bild_ipad' ];
+	
+			// vars
+			\$url = \$first_row_image['url'];
+			\$title = \$first_row_image['title'];
+			\$alt = \$first_row_image['alt'];
+			\$caption = \$first_row_image['caption'];
+		}
+
+		// grab size
+		\$thumb = \$first_row_image['sizes'][ \$size ];
+		\$width = \$first_row_image['sizes'][ \$size . '-width' ];
+		\$height = \$first_row_image['sizes'][ \$size . '-height' ];
+
+	?>
+	
+	<div>
+		<a href="<?php echo get_permalink(); ?>" title="<?php echo the_title(); ?>">
+			<img src="<?php echo \$thumb; ?>" alt="<?php echo \$alt; ?>" width="<?php echo \$width; ?>" height="<?php echo \$height; ?>" />
+		</a>
+	</div>
+		
+	<?php endif; ?>
+	
+	<?php
+		endwhile;
+		wp_reset_query();
+	?>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>acfimage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+	<!-- Optional: Description to show in the menu -->
+	<description>pi acf_slider_firstrow_img_cu_post</description>
+</snippet>
