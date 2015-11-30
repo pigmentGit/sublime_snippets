@@ -16,14 +16,6 @@
 			\$alt = \$image['alt'];
 			\$caption = \$image['caption'];
 
-			// checks if is mobile
-			if ( wp_is_mobile() ) {
-				\$size = 'liten_bild';
-			}
-			else {
-				\$size = 'stor_bild';
-			}
-		
 			// thumbnail
 			\$size = 'Portfolio_stor_bild';
 			\$thumb = \$image['sizes'][ \$size ];
