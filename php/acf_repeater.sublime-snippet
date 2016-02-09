@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-<?php 
+
 	if( have_rows('REPEATER_FIELD_HERE') ):
 	while ( have_rows('REPEATER_FIELD_HERE') ) : the_row();
 ?>
@@ -14,7 +14,7 @@ endwhile;
 else :
 	// none
 endif;
-?>
+
 ]]>
 </content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

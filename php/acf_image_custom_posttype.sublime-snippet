@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-<?php 		
+	
 \$args = array( 'post_type' => 'customposttype', 'posts_per_page' => 20 );
 \$loop = new WP_Query( \$args );
 while ( \$loop->have_posts() ) : \$loop->the_post();
@@ -50,7 +50,7 @@ while ( \$loop->have_posts() ) : \$loop->the_post();
 <?php
 	endwhile;
 	wp_reset_query();
-?>
+
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>acfimage</tabTrigger>
